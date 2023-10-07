@@ -1,0 +1,12 @@
+$primary-color : #f4f4f4;
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: $primary-color;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
