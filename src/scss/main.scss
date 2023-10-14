@@ -66,3 +66,11 @@ body {
         width: 35vw;
     }
 }
+
+.center{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 50dvw;
+    aspect-ratio: 1/1;
+}

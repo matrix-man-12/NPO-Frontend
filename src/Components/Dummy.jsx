@@ -1,11 +1,14 @@
 import React from 'react'
+import underDevelopment from '../assets/images/underDevelopment.svg'
 
 const Dummy = () => {
   
   console.log(`In Dummy`);
 
   return (
-    <div>Rendering a Test Component</div>
+    <div className='error-container_image center'>
+      <img src={underDevelopment} alt='Under Development' />
+    </div>
   )
 }
 
