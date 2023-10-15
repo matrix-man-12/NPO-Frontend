@@ -1,4 +1,5 @@
 import React from 'react'
+import NavBar from './NavBar';
 
 const Layout = (props) => {
   console.log(`In Layout`);
@@ -6,7 +7,12 @@ const Layout = (props) => {
   // TODO: Add Layout
   
   return (
-    props.children
+    <>
+      <NavBar/>
+      {
+        props.children
+      }
+    </>
   )
 }
 
