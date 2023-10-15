@@ -6,7 +6,15 @@ $main-color: #F96703;
 $black-color: #2C343F;
 $white-color: #f4f4f4;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    font-size: 100%; // will work when user change browser font
+  }
 
 
 :root {
@@ -15,9 +23,6 @@ $white-color: #f4f4f4;
 
 body {
     background-color: $background-color;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 .error-container {
@@ -29,7 +34,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 
     &-issues {
-        margin-top: 20px;
+        margin-top: 2rem;
     }
 
     &-info {
@@ -39,8 +44,8 @@ body {
 
         & ul {
             & li {
-                line-height: 16px;
-                margin: 10px;
+                line-height: 1.6rem;
+                margin: 1rem;
             }
         }
     }
@@ -48,7 +53,7 @@ body {
     &-buttons {
         display: flex;
         flex-direction: row;
-        margin-top: 20px;     
+        margin-top: 2rem;     
     }
 
     &-button-1 {
@@ -59,7 +64,7 @@ body {
     &-button-2 {
         background-color: $black-color !important;
         color: $white-color !important;
-        margin-left: 10px !important;
+        margin-left: 1rem !important;
     }
 
     &_image {
@@ -71,6 +76,26 @@ body {
     display: flex;
     flex-direction: row;
     margin: auto;
-    width: 50dvw;
+    width: 40dvw;
     aspect-ratio: 1/1;
+}
+
+.link {
+    text-decoration: none;
+    color: $black-color;
+
+    &:hover {
+        color: $main-color;
+    }
+}
+
+.space {
+    margin: 0 1rem;
+}
+
+.navlink {
+    color: $black-color;
+    &:hover {
+        color: $main-color;
+    }
 }
