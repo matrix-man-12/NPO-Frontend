@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
-import Constants from '../../Constants';
+import Constants from '../../data/Constants';
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
