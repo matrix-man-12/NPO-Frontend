@@ -45,8 +45,8 @@ const NavBar = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((pageItem) => (
-              <span onClick={handleCloseNavMenu} className='space'>
-                <Link key={pageItem.id} to={pageItem.link} className='link'>                
+              <span key={pageItem.id} onClick={handleCloseNavMenu} className='space'>
+                <Link to={pageItem.link} className='link'>                
                   {pageItem.page}
                 </Link>
               </span>
