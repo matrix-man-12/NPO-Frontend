@@ -1,5 +1,5 @@
 import React from 'react'
-import underDevelopment from '../../assets/images/underDevelopment.svg'
+import underDevelopment from '../../assets/images/UnderDevelopment.svg'
 
 const Dummy = () => {
   
