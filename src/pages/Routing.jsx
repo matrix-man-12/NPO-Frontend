@@ -22,7 +22,7 @@ const Routing = () => {
                         <Route exact path='/' element={<Dummy/>} />
                         <Route exact path='/home' element={<Dummy/>} />
                         <Route exact path='/logout' element={<Dummy/>} />
-                        <Route path='*' element={<CustomSuspense fallbackComponent={<Loader/>} mainComponent={<ErrorPage/>}/> }/>
+                        <Route path='*' element={<CustomSuspense mainComponent={<ErrorPage/>}/> }/>
                     </Routes>
                     {/* TODO: Add the authorized pages later */}
                         {/* <Auth>
