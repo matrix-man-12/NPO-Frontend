@@ -5,6 +5,7 @@ import CustomSuspense from "../Components/Common/CustomSuspense";
 import Network from '../Components/Common/Network'
 import Auth from "../Components/Common/Auth";
 import Layout from "../Components/Common/Layout";
+import Loader from "../Components/Common/Loader";
 
 const ErrorPage = React.lazy(() => import('../Components/Common/ErrorPage'))
 
@@ -21,7 +22,7 @@ const Routing = () => {
                         <Route exact path='/' element={<Dummy/>} />
                         <Route exact path='/home' element={<Dummy/>} />
                         <Route exact path='/logout' element={<Dummy/>} />
-                        <Route path='*' element={<CustomSuspense fallbackComponent={'Loading.....'} mainComponent={<ErrorPage/>}/> }/>
+                        <Route path='*' element={<CustomSuspense fallbackComponent={<Loader/>} mainComponent={<ErrorPage/>}/> }/>
                     </Routes>
                     {/* TODO: Add the authorized pages later */}
                         {/* <Auth>

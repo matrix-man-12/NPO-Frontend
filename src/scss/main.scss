@@ -6,7 +6,9 @@ $main-color: #F96703;
 $black-color: #2C343F;
 $white-color: #f4f4f4;
 
-* {
+*, 
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,7 +16,7 @@ $white-color: #f4f4f4;
 
 html {
     font-size: 100%; // will work when user change browser font
-  }
+}
 
 
 :root {
@@ -25,6 +27,7 @@ body {
     background-color: $background-color;
 }
 
+// Error Page CSS
 .error-container {
     display: flex;
     flex-direction: row;
