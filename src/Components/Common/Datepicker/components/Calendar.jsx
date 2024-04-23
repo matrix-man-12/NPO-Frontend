@@ -27,20 +27,25 @@ const Calendar = ({ startDate, endDate, onSelectStartDate, onSelectEndDate }) =>
   const days = getCalendarDays(currentMonth);
 
   const handleClick = (date) => {
-    // Check if the date is valid and within the acceptable range
     if (!date || !isWithin90Days(date)) {
-      return; // Ignore clicks on invalid or restricted dates
+      return; // No interaction for invalid or future dates
     }
   
     if (!startDate) {
       onSelectStartDate(date);
     } else if (startDate && !endDate) {
-      onSelectEndDate(date);
+      if (date > startDate) {
+        onSelectEndDate(date);
+      } else {
+        onSelectStartDate(date);
+        onSelectEndDate(null);
+      }
     } else {
-      onSelectStartDate(date); // Reset the selection
+      onSelectStartDate(date);
       onSelectEndDate(null);
     }
   };
+  
   
 
   // Group the days into weeks of 7 for the grid layout
