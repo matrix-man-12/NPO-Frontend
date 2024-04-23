@@ -1,25 +1,19 @@
 import React from 'react';
 
 const DateCell = ({ date, isStart, isEnd, isInRange, onClick }) => {
-  // Define base class
-  let cellClass = 'date-cell';
-
-  // Append additional class names based on conditions
-  if (isStart) {
-    cellClass += ' start-date';
+  // Return a blank cell if the date is null (placeholder)
+  if (!date) {
+    return <div className="date-cell empty" />; // Empty class for styling placeholders
   }
 
-  if (isEnd) {
-    cellClass += ' end-date';
-  }
-
-  if (isInRange) {
-    cellClass += ' in-range';
-  }
+  const isSelected = isStart || isEnd;
 
   return (
-    <div className={cellClass} onClick={() => onClick(date)}>
-      {date.getDate()}
+    <div
+      className={`date-cell ${isSelected ? 'selected' : ''} ${isInRange ? 'in-range' : ''}`}
+      onClick={() => onClick(date)}
+    >
+      {date.getDate()} {/* Display only the day number */}
     </div>
   );
 };
