@@ -1,19 +1,15 @@
 import React from 'react';
+import isWithin90Days from '../utils/helper';
 
 const DateCell = ({ date, isStart, isEnd, isInRange, onClick }) => {
-  // Return a blank cell if the date is null (placeholder)
-  if (!date) {
-    return <div className="date-cell empty" />; // Empty class for styling placeholders
-  }
-
-  const isSelected = isStart || isEnd;
+  const isDisabled = date && !isWithin90Days(date);
 
   return (
     <div
-      className={`date-cell ${isSelected ? 'selected' : ''} ${isInRange ? 'in-range' : ''}`}
-      onClick={() => onClick(date)}
+      className={`date-cell ${isStart ? 'selected' : ''} ${isInRange ? 'in-range' : ''} ${isDisabled ? 'disabled' : ''}`}
+      onClick={() => !isDisabled && onClick(date)} // Disable click if the date is out of range
     >
-      {date.getDate()} {/* Display only the day number */}
+      {date ? date.getDate() : ''} {/* Only display the day number if date is valid */}
     </div>
   );
 };

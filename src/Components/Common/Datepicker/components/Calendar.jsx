@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getCalendarDays, getMonthName } from './useCalendar';
 import DateCell from './DateCell';
+import isWithin90Days from '../utils/helper';
 
 // Function to navigate to the previous month
 const navigatePreviousMonth = (currentMonth, setMonth) => {
@@ -26,12 +27,21 @@ const Calendar = ({ startDate, endDate, onSelectStartDate, onSelectEndDate }) =>
   const days = getCalendarDays(currentMonth);
 
   const handleClick = (date) => {
-    if (!startDate || (startDate && endDate)) {
+    // Check if the date is valid and within the acceptable range
+    if (!date || !isWithin90Days(date)) {
+      return; // Ignore clicks on invalid or restricted dates
+    }
+  
+    if (!startDate) {
       onSelectStartDate(date);
     } else if (startDate && !endDate) {
       onSelectEndDate(date);
+    } else {
+      onSelectStartDate(date); // Reset the selection
+      onSelectEndDate(null);
     }
   };
+  
 
   // Group the days into weeks of 7 for the grid layout
   const weeks = [];
